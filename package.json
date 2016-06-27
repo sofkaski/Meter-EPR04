@@ -1,0 +1,16 @@
+{
+  "name": "mpr45s",
+  "version": "1.0.0",
+  "description": "",
+  "main": "mpr45s.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "modbus-rtu" : "*",
+    "serialport" : "*"
+   }
+}
