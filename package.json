@@ -1,16 +1,43 @@
 {
-  "name": "mpr45s",
-  "version": "1.0.0",
-  "description": "",
-  "main": "mpr45s.js",
+  "name": "epr04s",
+  "version": "0.1.0",
+  "description": "Node-RED abstraction of EPR-04 energy meter",
+  "main": "epr04s.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "keywords": [
+    "modbus",
+    "RTU",
+    "EPR04S"
+  ],
+  "node-red": {
+    "nodes": {
+      "EPR04S": "epr04s/epr04s.js"
+    }
+  },
+  "author": "Jyrki Kaski",
+  "license": "Apache-2.0",
   "dependencies": {
-    "modbus-rtu" : "*",
-    "serialport" : "*"
-   }
+    "modbus-rtu": "0.0.1",
+    "node-red": "^0.14.3",
+    "serialport": "*",
+    "sprintf-js": "^1.0.3",
+    "tracer": "^0.8.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-htmlmin": "^2.0.0",
+    "gulp-jshint": "^2.0.1",
+    "jshint": "^2.9.2",
+    "jshint-stylish": "^2.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sofkaski/Meter-EPR04.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sofkaski/Meter-EPR04/issues"
+  },
+  "homepage": "https://github.com/sofkaski/Meter-EPR04#readme"
 }

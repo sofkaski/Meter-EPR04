@@ -1,2 +1,2 @@
 # Meter-EPR04
-Nodejs abstraction of EPR-04 energy meter
+Node-RED abstraction of EPR-04 energy meter

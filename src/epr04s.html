@@ -1,0 +1,32 @@
+<script type="text/javascript">
+    RED.nodes.registerType('epr04s',{
+        category: 'modbus',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+            pollingInterval: {value: 10000}
+        },
+        inputs:1,
+        outputs:1,
+        icon: "modbus-rtu-icon.png",
+        label: function() {
+            return this.name||"EPR04S";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="epr04s">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-pollingInterval"><i class="icon-tag"></i>Polling interval</label>
+        <input type="text" id="node-input-pollingInterval" placeholder="Polling Interval">
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="epr04s">
+   <p>Emet EPR04S energy meter on Modbus RTU</p>
+</script>
