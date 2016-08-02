@@ -43,7 +43,10 @@ module.exports = function(RED) {
                 node.send([null, {"topic": "ActivePower", "payload":outPayload}]);
             }
         });
-
+        
+        node.on('close', function() {
+           clearInterval(node.pollingIntervalId);
+        });
     }    
     RED.nodes.registerType("epr04s",Epr04sNode);
     

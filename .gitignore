@@ -38,3 +38,6 @@ jspm_packages
 
 # Gulp output
 epr04s
+
+# File containing temporary notes during development
+notes.txt
