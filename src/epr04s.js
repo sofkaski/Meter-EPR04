@@ -3,7 +3,7 @@ module.exports = function(RED) {
     function Epr04sNode(config) {
         var log = RED.log;
         var vsprintf = require("sprintf-js").vsprintf;
-        var Epr04sRegisters = require("./eprs04sregisters.js").Epr04sRegisters;
+        var Epr04sRegisters = require("./epr04sregisters.js").Epr04sRegisters;
 
         RED.nodes.createNode(this,config);
         var node = this;
