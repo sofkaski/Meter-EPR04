@@ -1,8 +1,8 @@
     // Registers are in the order starting from 20. Every entry consists of two registers. I.e the first entry is register 20
     // and the second is 22 and so on
-    
-var exports.REGISTER_OFFSET = 20;
-var exports.Eprs04Registers = [
+var REGISTER_OFFSET = 20;
+module.exports = REGISTER_OFFSET;
+var Epr04sRegisters = [
         {label: "L1 Active Power", multiplier: 0.1, unit: "Watt", des: 1}, 
         {label: "L2 Active Power", multiplier: 0.1, unit: "Watt", des: 1}, 
         {label: "L3 Active Power", multiplier: 0.1, unit: "Watt", des: 1},
@@ -24,8 +24,8 @@ var exports.Eprs04Registers = [
         {label: "Average Capacitive Cos Phi", multiplier: 0.001, unit: "", des: 0}, 
         {label: "Frequency", multiplier: 0.01, unit: "Hz", des: 0} 
 		]; 
-
-var exports.REGISTER = {    
+module.exports = Epr04sRegisters
+var REGISTER = {    
         L1ActivePower:0, 
         L2ActivePower:2, 
         L3ActivePower:4, 
@@ -47,3 +47,4 @@ var exports.REGISTER = {
         AverageCapacitiveCosPhi:36, 
         Frequency:38 
 };
+module.exports = REGISTER;
