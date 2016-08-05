@@ -1,4 +1,3 @@
-    
     // Registers are in the order starting from 20. Every entry consists of two registers. I.e the first entry is register 20
     // and the second is 22 and so on
     
@@ -25,6 +24,7 @@ var exports.Eprs04Registers = [
         {label: "Average Capacitive Cos Phi", multiplier: 0.001, unit: "", des: 0}, 
         {label: "Frequency", multiplier: 0.01, unit: "Hz", des: 0} 
 		]; 
+
 var exports.REGISTER = {    
         L1ActivePower:0, 
         L2ActivePower:2, 
