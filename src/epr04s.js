@@ -26,7 +26,7 @@ module.exports = function(RED) {
                 var outPayload = [];
                 var inPayload = msg.payload;
                 var cursor = 0; 
-                for (var i = 0; i < Epr04sRegisters.length(); i++) {
+                for (var i = 0; i < Epr04sRegisters.length; i++) {
                     outPayload.push({label:Epr04sRegisters[i].label, 
                                      value: (((inPayload[cursor]<<16) | inPayload[cursor+1])*Epr04sRegisters[i].multiplier).toFixed(Epr04sRegisters[i].des), 
                                      unit:Epr04sRegisters[i].unit});
