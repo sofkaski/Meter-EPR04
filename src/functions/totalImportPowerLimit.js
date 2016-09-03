@@ -21,10 +21,10 @@ if (power > context.global.powerUpperLimit) {
 msg.topic = "\"powerLimit\"";
 if (upperLimitExceeded){
     msg.payload = {exceeded:true, powerValue:power};
-    node.status(PowerState.OVER_LIMIT)
+    node.status(PowerState.OVER_LIMIT);
 }
 else {
     msg.payload = {exceeded:false, powerValue:power};
-    node.status(PowerState.UNDER_LIMIT)
+    node.status(PowerState.UNDER_LIMIT);
 }
 return msg;
