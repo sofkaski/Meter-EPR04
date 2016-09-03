@@ -1,11 +1,9 @@
-// name: totalImportPowerLimit
-// outputs: 1
-if (!context.powerUpperLimit) {
+if (!context.global.powerUpperLimit) {
     context.global.powerUpperLimit = 45;
 }
  var PowerState = {
         UNDER_LIMIT: {fill:"green",shape:"dot",text:""},
-        OVER_LIMIT: {fill:"red",shape:"ring",text:"over limit"}
+        OVER_LIMIT: {fill:"red",shape:"dot",text:""}
  };
  
 if (msg.topic != "EPR04Measurements") {
@@ -21,10 +19,14 @@ if (power > context.global.powerUpperLimit) {
 msg.topic = "\"powerLimit\"";
 if (upperLimitExceeded){
     msg.payload = {exceeded:true, powerValue:power};
-    node.status(PowerState.OVER_LIMIT);
+    var powerState = PowerState.OVER_LIMIT;
+    powerState.text = "over the limit " + context.global.powerUpperLimit.toString();
+    node.status(powerState)
 }
 else {
     msg.payload = {exceeded:false, powerValue:power};
-    node.status(PowerState.UNDER_LIMIT);
+    var powerState = PowerState.UNDER_LIMIT;
+    powerState.text = "under the limit " + context.global.powerUpperLimit.toString();
+    node.status(powerState)
 }
 return msg;
