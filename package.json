@@ -16,6 +16,10 @@
       "EPR04S": "epr04s/epr04s.js"
     }
   },
+  "main": "node",
+  "files": [
+    "epr04s"
+  ],
   "author": "Jyrki Kaski",
   "license": "Apache-2.0",
   "dependencies": {

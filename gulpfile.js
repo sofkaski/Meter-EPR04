@@ -30,7 +30,7 @@ gulp.task('minify', function () {
 });
 
 gulp.task('nodejs', function () {
-    return gulp.src('src/*.js')
+    return gulp.src('src/**/*.js')
       .pipe(jshint())
       .pipe(jshint.reporter('jshint-stylish'))
       .pipe(jshint.reporter('fail'))
@@ -38,7 +38,7 @@ gulp.task('nodejs', function () {
 });
 
 gulp.task('lint', function() {
-  return gulp.src('./src/*.js')
+  return gulp.src('./src/**/*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('jshint-stylish'))
     .pipe(jshint.reporter('fail'))
