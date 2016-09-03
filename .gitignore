@@ -41,3 +41,6 @@ epr04s
 
 # File containing temporary notes during development
 notes.txt
+
+# tar balls
+*.tgz
