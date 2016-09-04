@@ -45,5 +45,22 @@ REGISTER: {
         AverageInductiveCosPhi:34, 
         AverageCapacitiveCosPhi:36, 
         Frequency:38 
+    },
+REGISTER_GROUPS: {
+    ActivePower: {L1:REGISTER.L1ActivePower,L2:REGISTER.L2ActivePower,L3:REGISTER.L3ActivePower},
+    ReactivePower: {L1:REGISTER.L1ReactivePower,L2:REGISTER.L2ReactivePower,L3:REGISTER.L3ReactivePower},
+    ApparentPower: {L1:REGISTER.L1ApparentPower,L2:REGISTER.L2ApparentPower,L3:REGISTER.L3ApparentPower},
+    CosPhi: {L1:REGISTER.L1CosPhi,L2:REGISTER.L2CosPhi,L3:REGISTER.L3CosPhi},
+    TotalActivePower: {Import:REGISTER.TotalImportActivePower, Export:REGISTER.TotalExportActivePower},
+    TotalInductiveReactivePower: {TotalInductiveReactivePower: REGISTER.TotalInductiveReactivePower},
+    TotalCapacitiveReactivePower: {TotalCapacitiveReactivePower: REGISTER.TotalCapacitiveReactivePower},
+    TotalApparentPower: {TotalApparentPower: REGISTER.TotalApparentPower},
+    AverageCosPhi: {Inductive: REGISTER.AverageInductiveCosPhi, Capacitive: REGISTER.AverageCapacitiveCosPhi},
+    Frequency: {Frequency: REGISTER.Frequency}
     }
 };
+
+module.exports.registerValue = function(register, reg1value, reg2value) {
+        return (((reg1value<<16) | reg2value)*Epr04sRegisters[register].multiplier).toFixed(Epr04sRegisters[register].des);
+};
+
