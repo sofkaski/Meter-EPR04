@@ -1,3 +1,4 @@
+// Limit initialization here is for test purposes only
 if (!context.global.powerUpperLimit) {
     context.global.powerUpperLimit = 45;
 }
@@ -11,7 +12,7 @@ if (msg.topic != "EPR04Measurements") {
 }
 var REGISTER = global.get('epr04sregisters').REGISTER;
 var upperLimitExceeded = false;
-var totalImportActivePower = msg.payload[REGISTER.TotalImportActivePower/2];
+var totalImportActivePower = msg.payload.data[REGISTER.TotalImportActivePower/2];
 var power = parseFloat(totalImportActivePower.value);
 if (power > context.global.powerUpperLimit) {
     upperLimitExceeded = true;
