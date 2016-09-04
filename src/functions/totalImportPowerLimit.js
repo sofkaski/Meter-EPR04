@@ -21,12 +21,12 @@ if (upperLimitExceeded){
     msg.payload = {exceeded:true, powerValue:power};
     var powerState = PowerState.OVER_LIMIT;
     powerState.text = "over the limit " + context.global.powerUpperLimit.toString();
-    node.status(powerState)
+    node.status(powerState);
 }
 else {
     msg.payload = {exceeded:false, powerValue:power};
     var powerState = PowerState.UNDER_LIMIT;
     powerState.text = "under the limit " + context.global.powerUpperLimit.toString();
-    node.status(powerState)
+    node.status(powerState);
 }
 return msg;
