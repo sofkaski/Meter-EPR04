@@ -4,7 +4,6 @@ module.exports = function(RED) {
         var log = RED.log;
         var vsprintf = require("sprintf-js").vsprintf;
         var epr04sRegisters = require("./epr04sregisters.js");
-        var Epr04sRegisters = epr04sRegisters.Epr04sRegisters;
         var REGISTER_GROUPS = epr04sRegisters.REGISTER_GROUPS;
 
         RED.nodes.createNode(this,config);

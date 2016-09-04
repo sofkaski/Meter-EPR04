@@ -24,6 +24,7 @@ module.exports.Epr04sRegisters = [
         {label: "Average Capacitive Cos Phi", multiplier: 0.001, unit: "", des: 0}, 
         {label: "Frequency", multiplier: 0.01, unit: "Hz", des: 0} 
 		]; 
+var Epr04sRegisters = module.exports.Epr04sRegisters;
 
 module.exports.REGISTER = {    
         L1ActivePower:0, 
