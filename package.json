@@ -2,7 +2,7 @@
   "name": "epr04s",
   "version": "0.1.0",
   "description": "Node-RED abstraction of EPR-04 energy meter",
-  "main": "epr04s.js",
+  "main": "node",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,7 +16,6 @@
       "EPR04S": "epr04s/epr04s.js"
     }
   },
-  "main": "node",
   "files": [
     "epr04s"
   ],
@@ -25,6 +24,7 @@
   "dependencies": {
     "modbus-rtu": "0.0.1",
     "node-red": "^0.14.3",
+    "node-red-contrib-graphs": "^0.3.5",
     "serialport": "*",
     "sprintf-js": "^1.0.3",
     "tracer": "^0.8.3"

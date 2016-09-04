@@ -63,7 +63,4 @@ module.exports.REGISTER_GROUPS = {
     Frequency: {Frequency: REGISTER.Frequency}
     };
 
-module.exports.registerValue = function(register, reg1value, reg2value) {
-        return (((reg1value<<16) | reg2value)*Epr04sRegisters[register].multiplier).toFixed(Epr04sRegisters[register].des);
-};
 
