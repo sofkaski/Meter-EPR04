@@ -33,9 +33,9 @@ module.exports = function(RED) {
                 for (var group in REGISTER_GROUPS) {
                     var groupData = {};
                     for (var member in REGISTER_GROUPS[group]) {
-                        var offset = REGISTER_GROUPS.group.member - epr04sRegisters.REGISTER_OFFSET;
-                        var regValue = epr04sRegisters.registerValue(REGISTER_GROUPS.group.member, inPayload[offset], inPayload[offset+1]);   
-                        groupData.member = regValue;
+                        var offset = REGISTER_GROUPS[group][member] - epr04sRegisters.REGISTER_OFFSET;
+                        var regValue = epr04sRegisters.registerValue(REGISTER_GROUPS[group][member], inPayload[offset], inPayload[offset+1]);   
+                        groupData[member] = regValue;
                     }
                     outPayload.data.group = groupData;
                 }
