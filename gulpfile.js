@@ -8,7 +8,7 @@ gulp.task('default', function() {
 
 gulp.task('build', ['minify', 'nodejs']);
 
-gulp.task('publish', ['build', 'icons', 'locale']);
+gulp.task('publish', ['build', 'icons', 'locale', 'config']);
 
 gulp.task('icons', function() {
     return gulp.src('src/icons/**/*').pipe(gulp.dest('epr04s/icons'));
@@ -35,6 +35,11 @@ gulp.task('nodejs', function () {
       .pipe(jshint.reporter('jshint-stylish'))
       .pipe(jshint.reporter('fail'))
       .pipe(gulp.dest('epr04s'));
+});
+
+gulp.task('config', function() {
+    return gulp.src('src/**.*.json')
+	.pipe(gulp.dest('epr04s'));
 });
 
 gulp.task('lint', function() {

@@ -6,13 +6,14 @@ module.exports = function(RED) {
         var epr04sRegisters = require("./epr04sregisters.js");
       	var Epr04sRegisters = epr04sRegisters.Epr04sRegisters;
         var REGISTER_GROUPS = epr04sRegisters.REGISTER_GROUPS;
-        var rounderDB = require("rounder.js");
-        var userDir = require("settings.js").userDir;
+        
 
         RED.nodes.createNode(this,config);
         var node = this;
         node.name = config.name;
         node.storingInterval = config.storingInterval;
+        var rounderDB = require("rounderdb/RounderDB.js");
+        var userDir = "/home/pirate/.node-red";
       
         var DBConf = require('./historydb.conf.js');
         var db = null;
