@@ -13,7 +13,8 @@
   ],
   "node-red": {
     "nodes": {
-      "EPR04S": "epr04s/epr04s.js"
+      "EPR04S": "epr04s/epr04s.js",
+      "EPR04S-History": "epr04s/epr04s-history.js"
     }
   },
   "files": [
@@ -25,6 +26,7 @@
     "modbus-rtu": "0.0.1",
     "node-red": "^0.14.3",
     "node-red-contrib-graphs": "^0.3.5",
+    "rounderdb": "^0.2.2",
     "serialport": "*",
     "sprintf-js": "^1.0.3",
     "tracer": "^0.8.3"

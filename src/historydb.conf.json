@@ -1,0 +1,186 @@
+{
+    "persistenceConf": {
+        "dbFile": "rounderDB.json",
+        "syncInterval": 600
+    },
+        "L1ActivePower": [
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "L2ActivePower": [
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "L3ActivePower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "L1ReactivePower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "L2ReactivePower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "L3ReactivePower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "L1ApparentPower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "L2ApparentPower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "L3ApparentPower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "L1CosPhi": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "L2CosPhi": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "L3CosPhi": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "TotalImportActivePower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "TotalExportActivePower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "TotalInductiveReactivePower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "TotalCapacitiveReactivePower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "TotalApparentPower": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "AverageInductiveCosPhi": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "AverageCapacitiveCosPhi": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ],
+        "Frequency": [ 
+            {   
+            "capacity": 6,
+            "aggregationStrategy": "average"
+            },
+            {
+            "capacity": 1440
+            }
+         ]
+}

@@ -10,4 +10,4 @@ if (msg.topic === "powerLimit") {
         msg.payload.state = 0;
     }
 }
-return msg
+return msg;

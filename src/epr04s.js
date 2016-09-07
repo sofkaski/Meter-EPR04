@@ -12,7 +12,7 @@ module.exports = function(RED) {
         node.name = config.name;
         node.pollingInterval = config.pollingInterval;
 
-        log.info("Instantiated EPR-04S module '" + node.name + "'");
+        log.info("Instantiated EPR04S module '" + node.name + "'");
 
               
         node.pollingIntervalId = 0;
@@ -34,9 +34,9 @@ module.exports = function(RED) {
                     var groupData = {};
                     for (var member in REGISTER_GROUPS[group]) {
                         var inPayloadIndex = REGISTER_GROUPS[group][member];
-			var registerTableIndex = inPayloadIndex/2;
-			var regValue = (((inPayload[inPayloadIndex]<<16) | inPayload[inPayloadIndex+1])*Epr04sRegisters[registerTableIndex].multiplier)
-					.toFixed(Epr04sRegisters[registerTableIndex].des); 
+			            var registerTableIndex = inPayloadIndex/2;
+			            var regValue = (((inPayload[inPayloadIndex]<<16) | inPayload[inPayloadIndex+1])*Epr04sRegisters[registerTableIndex].multiplier)
+					                    .toFixed(Epr04sRegisters[registerTableIndex].des); 
                         groupData[member] = regValue;
                     }
                     outPayload.data[group] = groupData;

@@ -1,0 +1,33 @@
+<script type="text/javascript">
+    RED.nodes.registerType('epr04s-history',{
+        category: 'modbus',
+        color: '#a6bbcf',
+        defaults: {
+            name: {value:""},
+        },
+        inputs:1,
+        outputs:1,
+        icon: "modbus-rtu-icon.png",
+        label: function() {
+            return this.name||"EPR04S-History";
+        }
+    });
+</script>
+
+<script type="text/x-red" data-template-name="epr04s">
+    <div class="form-row">
+        <label for="node-input-name"><i class="icon-tag"></i>Name</label>
+        <input type="text" id="node-input-name" placeholder="Name">
+    </div>
+    <div class="form-row">
+        <label for="node-input-storingInterval"><i class="icon-tag"></i>Disc storage interval</label>
+        <input type="text" id="node-input-storingInterval" placeholder="Storing Interval">
+    </div>
+
+</script>
+
+<script type="text/x-red" data-help-name="epr04s-history">
+   <p>Emet EPR04S energy meter data history module</p>
+   <p>Module that keeps history of EPR04S energy measurements. Provides an interface for node-red-contrib-graphs.</p>
+   <p>Storing interval in seconds. Interval 0s denotes no disk storing at all.</p>
+</script>
