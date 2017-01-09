@@ -7,6 +7,16 @@ Only silk glove tested.
 
 __I would not consider using this yet (Jul-2016)__.
 
+## Building
+
+ * clone this repo
+ * cd <root directory of the repo>
+ * npm install
+ * gulp publish
+ * npm pack
+
+Result of the previous is a tar ball in the root directory. You can install it with npm install to the target.
+
 ## Configuration
 Node name and polling interval in milliseconds can be confgures. 
 Drag the epr04s node to a flow and doule-click to edit properties. 
