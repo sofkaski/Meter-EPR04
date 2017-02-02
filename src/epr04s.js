@@ -1,5 +1,6 @@
+/*jshint esversion: 6 */
 module.exports = function(RED) {
-    
+
     function Epr04sNode(config) {
         var log = RED.log;
         var vsprintf = require("sprintf-js").vsprintf;
@@ -14,37 +15,39 @@ module.exports = function(RED) {
 
         log.info("Instantiated EPR04S module '" + node.name + "'");
 
-              
+
         node.pollingIntervalId = 0;
-    
+
         // set polling of registers. Send out messages compliant with node-red-contrib-modbus-rtu.
         //
+        var timerMsg = Array(21).fill(null);
         node.pollingIntervalId = setInterval(function() {
-                node.send([{ "topic": "readHoldingRegisters", "payload": { "slave": "1", "startRegister": epr04sRegisters.REGISTER_OFFSET, "nbrOfRegisters": "40" }},null]);
+                timerMsg[0] = { "topic": "readHoldingRegisters", "payload": { "slave": "1", "startRegister": epr04sRegisters.REGISTER_OFFSET, "nbrOfRegisters": "40" }};
+                node.send(timerMsg);
                 },
             node.pollingInterval);
-        
+
         // Handling of incoming message from node-red-contrib-modbus-rtu
         //
         node.on('input', function(msg) {
             if (msg.topic === "readHoldingRegisters") {
-                var outPayload = {tstamp: Date.now(), data:{}};
+                var messages = [];
+                messages.push(null); // skip the first since it is used to send timer messages
+                var tstamp = Date.now();
                 var inPayload = msg.payload;
                 for (var group in REGISTER_GROUPS) {
-                    var groupData = {};
                     for (var member in REGISTER_GROUPS[group]) {
                         var inPayloadIndex = REGISTER_GROUPS[group][member];
-			            var registerTableIndex = inPayloadIndex/2;
-			            var regValue = (((inPayload[inPayloadIndex]<<16) | inPayload[inPayloadIndex+1])*Epr04sRegisters[registerTableIndex].multiplier)
-					                    .toFixed(Epr04sRegisters[registerTableIndex].des); 
-                        groupData[member] = regValue;
+			                  var registerTableIndex = inPayloadIndex/2;
+			                  var regValue = (((inPayload[inPayloadIndex]<<16) | inPayload[inPayloadIndex+1])*Epr04sRegisters[registerTableIndex].multiplier)
+					                    .toFixed(Epr04sRegisters[registerTableIndex].des);
+                        messages.push({"topic": group+member, "tstamp": tstamp, "payload":regValue});
                     }
-                    outPayload.data[group] = groupData;
                 }
-                node.send([null, {"topic": "EPR04Measurements", "payload":outPayload}]);
+                node.send(messages);
             }
         });
-        
+
         // handling of closing the system
         //
         node.on('close', function() {
@@ -53,8 +56,8 @@ module.exports = function(RED) {
             }
         });
 
-         
-    }    
+
+    }
     RED.nodes.registerType("epr04s",Epr04sNode);
-    
+
 };

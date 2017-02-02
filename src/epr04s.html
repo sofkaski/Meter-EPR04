@@ -7,7 +7,7 @@
             pollingInterval: {value: 10000}
         },
         inputs:1,
-        outputs:2,
+        outputs:21,
         icon: "modbus-rtu-icon.png",
         label: function() {
             return this.name||"EPR04S";
@@ -30,4 +30,28 @@
 <script type="text/x-red" data-help-name="epr04s">
    <p>Emet EPR04S energy meter on Modbus RTU</p>
    <p>Polling interval is the interval in which registers are red from the meter via Modbus. Interval in milliseconds.</p>
+   <p>Output messages are the following:</p>
+   <ol type="1">
+   <li>Timer message for modbus read</li>
+   <li>L1 Active Power</li>
+   <li>L2 Active Power</li>
+   <li>L3 Active Power</li>
+   <li>L1 Reactive Power</li>
+   <li>L2 Reactive Power</li>
+   <li>L3 Reactive Power</li>
+   <li>L1 Apparent Power</li>
+   <li>L2 Apparent Power</li>
+   <li>L3 Apparent Power</li>
+   <li>L1 Cos Phi</li>
+   <li>L2 Cos Phi</li>
+   <li>L3 Cos Phi</li>
+   <li>Total Import Active Power</li>
+   <li>Total Export Active Power</li>
+   <li>Total Inductive Reactive Power</li>
+   <li>Total Capacitive Reactive Power</li>
+   <li>Total Apparent Power</li>
+   <li>Average Inductive Cos Phi</li>
+   <li>Average Capacitive Cos Phi</li>
+   <li>Frequency</li>
+   </ol>
 </script>
