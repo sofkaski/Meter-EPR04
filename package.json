@@ -13,8 +13,7 @@
   ],
   "node-red": {
     "nodes": {
-      "EPR04S": "epr04s/epr04s.js",
-      "EPR04S-History": "epr04s/epr04s-history.js"
+      "EPR04S": "epr04s/epr04s.js"
     }
   },
   "files": [
